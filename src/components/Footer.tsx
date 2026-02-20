@@ -38,7 +38,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-xs font-mono text-muted-foreground mt-4 opacity-60">
-            © 2024 Netra Project · Smart India Hackathon
+            © 2024 Netra Project · Katalyst TechFest
           </p>
         </div>
       </div>

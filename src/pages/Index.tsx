@@ -52,7 +52,7 @@ export default function Index() {
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-16">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-cyber-cyan border border-cyber-cyan/30 bg-cyber-cyan/5 px-4 py-2 rounded mb-8 uppercase tracking-widest animate-fade-up">
             <span className="w-2 h-2 bg-cyber-cyan rounded-full animate-pulse" />
-            Smart India Hackathon · Cybersecurity Track
+            Katalyst TechFest · Cybersecurity Track
           </div>
 
           <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-black mb-4 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s", opacity: 0 }}>
