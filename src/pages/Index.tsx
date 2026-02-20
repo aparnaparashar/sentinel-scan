@@ -17,7 +17,7 @@ const threatBadges = [
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div id="top" className="min-h-screen bg-background">
       <Navbar />
 
       {/* ===== HERO ===== */}
@@ -56,8 +56,8 @@ export default function Index() {
           </div>
 
           <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-black mb-4 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s", opacity: 0 }}>
-            <span className="text-glow-red text-cyber-red">BAD</span>
-            <span className="text-foreground">COPS</span>
+            <span className="text-glow-red text-cyber-red">NET</span>
+            <span className="text-foreground">RA</span>
           </h1>
 
           <p className="font-orbitron text-sm md:text-base text-cyber-cyan tracking-widest mb-6 uppercase animate-fade-up" style={{ animationDelay: "0.2s", opacity: 0 }}>
@@ -65,7 +65,7 @@ export default function Index() {
           </p>
 
           <p className="font-rajdhani text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s", opacity: 0 }}>
-            Scan Windows systems for vulnerabilities using <strong className="text-foreground">native PowerShell</strong> — 
+            Scan Windows systems for vulnerabilities using <strong className="text-foreground">native PowerShell</strong> - 
             no agent, no installation, no footprint. CVE-mapped reports in minutes.
           </p>
 
@@ -108,7 +108,7 @@ export default function Index() {
           <div className="flex items-center gap-3 mb-6">
             <AlertTriangle className="w-5 h-5 text-cyber-red" />
             <h2 className="font-orbitron text-base font-bold text-foreground tracking-wider">DETECTABLE VULNERABILITIES</h2>
-            <span className="font-mono text-xs text-muted-foreground">— CVEs BadCops can identify</span>
+            <span className="font-mono text-xs text-muted-foreground">— CVEs Netra can identify</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {[

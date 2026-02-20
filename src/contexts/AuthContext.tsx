@@ -17,8 +17,8 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-const STORAGE_KEY = "badcops_users";
-const SESSION_KEY = "badcops_session";
+const STORAGE_KEY = "netra_users";
+const SESSION_KEY = "netra_session";
 
 function getUsers(): Record<string, { password: string; name: string; createdAt: string }> {
   try {

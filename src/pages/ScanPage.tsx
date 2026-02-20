@@ -61,7 +61,7 @@ export default function ScanPage() {
   const [steps, setSteps] = useState<ScanStep[]>(mode === "light" ? lightSteps : deepSteps);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [done, setDone] = useState(false);
-  const [log, setLog] = useState<string[]>(["[BadCops] Initializing scan engine...", `[BadCops] Mode: ${mode.toUpperCase()} | Target: ${ip}`]);
+  const [log, setLog] = useState<string[]>(["[Netra] Initializing scan engine...", `[Netra] Mode: ${mode.toUpperCase()} | Target: ${ip}`]);
   const logRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -182,7 +182,7 @@ export default function ScanPage() {
                 <div key={i} className={`font-mono text-xs mb-1 ${
                   line.startsWith("[+]") ? "text-threat-low" :
                   line.startsWith("[!]") ? "text-threat-high" :
-                  line.startsWith("[BadCops]") ? "text-cyber-cyan" : "text-muted-foreground"
+                  line.startsWith("[Netra]") ? "text-cyber-cyan" : "text-muted-foreground"
                 }`}>
                   {line}
                 </div>

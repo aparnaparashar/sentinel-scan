@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Copy, Check, Download } from "lucide-react";
 
 const LIGHT_SCAN_SCRIPT = `# ============================================================
-# BadCops Light Scan - Windows Vulnerability Assessment
-# Version: 1.0 | Author: BadCops Team
-# Run as: powershell -ExecutionPolicy Bypass -File BadCops-Light.ps1
+# Netra Light Scan - Windows Vulnerability Assessment
+# Version: 1.0 | Author: Netra Team
+# Run as: powershell -ExecutionPolicy Bypass -File Netra-Light.ps1
 # NO installation required. NO persistence left on system.
 # ============================================================
 
@@ -23,7 +23,7 @@ $report = @{
     Findings    = @()
 }
 
-Write-Host "[*] BadCops Light Scan Starting..." -ForegroundColor Cyan
+Write-Host "[*] Netra Light Scan Starting..." -ForegroundColor Cyan
 
 # === 1. OS VERSION & BUILD ===
 Write-Host "[*] Collecting OS information..." -ForegroundColor Yellow
@@ -111,16 +111,17 @@ try {
 # === OUTPUT REPORT ===
 Write-Host "[+] Scan complete. Findings: $($report.Findings.Count)" -ForegroundColor Green
 $json = $report | ConvertTo-Json -Depth 10
-$outputPath = Join-Path $env:TEMP "BadCops-Report-$(Get-Date -Format 'yyyyMMdd-HHmmss').json"
+$outputPath = Join-Path $env:TEMP "Netra-Report-$(Get-Date -Format 'yyyyMMdd-HHmmss').json"
+$json | Out-File -FilePath $outputPath -Encoding UTF8
 $json | Out-File -FilePath $outputPath -Encoding UTF8
 Write-Host "[+] Report saved: $outputPath" -ForegroundColor Cyan
-Write-Host "[+] Upload this file to BadCops portal for CVE analysis." -ForegroundColor Green
+Write-Host "[+] Upload this file to Netra portal for CVE analysis." -ForegroundColor Green
 $json`;
 
 const DEEP_SCAN_SCRIPT = `# ============================================================
-# BadCops Deep Scan - Remote Windows Vulnerability Assessment
+# Netra Deep Scan - Remote Windows Vulnerability Assessment
 # Requires: Admin credentials + WinRM enabled on target
-# Usage: .\BadCops-Deep.ps1 -TargetIP 192.168.1.100 -Credential (Get-Credential)
+# Usage: .\Netra-Deep.ps1 -TargetIP 192.168.1.100 -Credential (Get-Credential)
 # ============================================================
 
 param(
@@ -128,7 +129,7 @@ param(
     [Parameter(Mandatory=$true)][System.Management.Automation.PSCredential]$Credential
 )
 
-Write-Host "[*] BadCops Deep Scan starting on $TargetIP ..." -ForegroundColor Cyan
+Write-Host "[*] Netra Deep Scan starting on $TargetIP ..." -ForegroundColor Cyan
 
 # Test WinRM connectivity
 if (-not (Test-WSMan -ComputerName $TargetIP -Credential $Credential -Authentication Negotiate -ErrorAction SilentlyContinue)) {
@@ -180,7 +181,7 @@ $deepReport = Invoke-Command -Session $session -ScriptBlock {
 }
 
 Remove-PSSession $session
-$outputPath = Join-Path $env:TEMP "BadCops-Deep-$($TargetIP.Replace('.','_'))-$(Get-Date -Format 'yyyyMMdd-HHmmss').json"
+$outputPath = Join-Path $env:TEMP "Netra-Deep-$($TargetIP.Replace('.','_'))-$(Get-Date -Format 'yyyyMMdd-HHmmss').json"
 $deepReport | ConvertTo-Json -Depth 10 | Out-File $outputPath -Encoding UTF8
 Write-Host "[+] Deep scan complete. Report: $outputPath" -ForegroundColor Green
 `;
@@ -192,7 +193,7 @@ interface ScriptViewerProps {
 export default function ScriptViewer({ mode }: ScriptViewerProps) {
   const [copied, setCopied] = useState(false);
   const script = mode === "light" ? LIGHT_SCAN_SCRIPT : DEEP_SCAN_SCRIPT;
-  const filename = mode === "light" ? "BadCops-Light.ps1" : "BadCops-Deep.ps1";
+  const filename = mode === "light" ? "Netra-Light.ps1" : "Netra-Deep.ps1";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(script);

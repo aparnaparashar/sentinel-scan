@@ -35,12 +35,13 @@ export default function SignInPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 mb-6">
+            <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-cyber-red rounded flex items-center justify-center shadow-glow-red">
               <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-orbitron text-2xl font-black tracking-widest">
-              BAD<span className="text-cyber-red">COPS</span>
+              <span className="text-[#e22f35]">NET</span>
+              <span className="text-white">RA</span>
             </span>
           </div>
           <h1 className="font-orbitron text-xl font-bold text-foreground mb-1">SIGN IN</h1>
@@ -60,7 +61,7 @@ export default function SignInPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="operator@badcops.io"
+                placeholder="operator@netra.io"
                 className="w-full bg-surface-2 border border-border text-foreground font-mono text-sm px-4 py-3 rounded-lg focus:outline-none focus:border-cyber-red/60 focus:shadow-glow-red placeholder:text-muted-foreground transition-all"
               />
             </div>
@@ -126,7 +127,7 @@ export default function SignInPage() {
         </div>
 
         <p className="text-center font-mono text-xs text-muted-foreground mt-6 opacity-50">
-          Authorized operators only · BadCops v1.0
+          Authorized operators only · Netra v1.0
         </p>
       </div>
     </div>

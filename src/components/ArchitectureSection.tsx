@@ -59,10 +59,10 @@ export default function ArchitectureSection() {
             System Architecture
           </div>
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-foreground mb-4">
-            HOW <span className="text-glow-red text-cyber-red">BADCOPS</span> WORKS
+            HOW <span className="text-glow-red text-cyber-red">NETRA</span> WORKS
           </h2>
           <p className="text-muted-foreground font-rajdhani text-lg max-w-2xl mx-auto">
-            A layered, agent-less architecture designed for real-world Windows environments — no installation, no persistence, no footprint.
+            A layered, agent-less architecture designed for real-world Windows environments - no installation, no persistence, no footprint.
           </p>
         </div>
 

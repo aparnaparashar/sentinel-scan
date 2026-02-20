@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Shield, LogIn, LogOut, UserPlus, User } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -6,33 +6,65 @@ import { useAuth } from "@/contexts/AuthContext";
 export default function Navbar() {
   const { user, signOut } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-cyber-red rounded flex items-center justify-center shadow-glow-red">
-            <Shield className="w-4 h-4 text-primary-foreground" />
-          </div>
-          <span className="font-orbitron text-lg font-bold text-foreground tracking-widest">
-            BAD<span className="text-cyber-red">COPS</span>
-          </span>
-        </Link>
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-cyber-red rounded flex items-center justify-center shadow-glow-red">
+              <Shield className="w-4 h-4 text-primary-foreground" />
+            </div>
+            <span className="font-orbitron text-lg font-bold text-foreground tracking-widest">
+              <span className="text-[#e22f35]">NET</span>
+              <span className="text-white">RA</span>
+            </span>
+          </Link>
 
         <div className="hidden md:flex items-center gap-6">
           {[
-            { label: "Architecture", href: "/#architecture" },
-            { label: "Scan", href: "/#scan" },
+            { label: "Home", id: "top" },
+            { label: "Architecture", id: "architecture" },
+            { label: "Scan", id: "scan" },
             { label: "Report", href: "/report" },
-          ].map(({ label, href }) => (
-            <Link
-              key={label}
-              to={href}
-              className="font-mono text-xs text-muted-foreground hover:text-foreground uppercase tracking-widest transition-colors"
-            >
-              {label}
-            </Link>
-          ))}
+          ].map(({ label, id, href }) => {
+            if (id) {
+              // If on home page, scroll to section; otherwise navigate to home with hash
+              return location.pathname === "/" ? (
+                <button
+                  key={label}
+                  onClick={() => {
+                    if (id === "top") window.scrollTo({ top: 0, behavior: "smooth" });
+                    else {
+                      const el = document.getElementById(id);
+                      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
+                  className="font-mono text-xs text-muted-foreground hover:text-foreground uppercase tracking-widest transition-colors bg-transparent border-0"
+                >
+                  {label}
+                </button>
+              ) : (
+                <Link
+                  key={label}
+                  to={id === "top" ? "/" : `/#${id}`}
+                  className="font-mono text-xs text-muted-foreground hover:text-foreground uppercase tracking-widest transition-colors"
+                >
+                  {label}
+                </Link>
+              );
+            }
+
+            return (
+              <Link
+                key={label}
+                to={href as string}
+                className="font-mono text-xs text-muted-foreground hover:text-foreground uppercase tracking-widest transition-colors"
+              >
+                {label}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-3">

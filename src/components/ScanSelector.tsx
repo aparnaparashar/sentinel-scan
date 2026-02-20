@@ -130,7 +130,7 @@ export default function ScanSelector() {
               <Download className="w-4 h-4 text-cyber-cyan" />
               <h3 className="font-rajdhani font-semibold text-foreground text-lg">PowerShell Script</h3>
               <span className="font-mono text-xs text-muted-foreground border border-border px-2 py-0.5 rounded">
-                {mode === "light" ? "BadCops-Light.ps1" : "BadCops-Deep.ps1"}
+                {mode === "light" ? "Netra-Light.ps1" : "Netra-Deep.ps1"}
               </span>
             </div>
             <ScriptViewer mode={mode} />

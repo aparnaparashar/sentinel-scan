@@ -1,73 +1,54 @@
-# Welcome to your Lovable project
+# Netra
 
-## Project info
+Netra - agentless Windows vulnerability scanner 
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
 
-## How can I edit this code?
+Netra is a front-end for an agentless Windows vulnerability assessment toolkit. This repository contains the UI built with Vite + React + Tailwind and a set of embedded PowerShell scan scripts (light & deep) shown in the app.
 
-There are several ways of editing your application.
 
-**Use Lovable**
+## Quick start
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Prerequisites
+- Node.js (recommended LTS, 18+)
+- npm
 
-Changes made via Lovable will be committed automatically to this repo.
+Install and run the dev server:
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open http://localhost:8080/ in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Build for production:
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Preview the build:
 
-## What technologies are used for this project?
+```bash
+npm run preview
+```
 
-This project is built with:
+## Important files
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `index.html` — HTML entry and metadata
+- `src/main.tsx` — React entry (project expects a `src` folder)
+- `src/pages/Index.tsx` — Home / hero page
+- `src/components/Navbar.tsx` — Navigation (Home, Architecture, Scan, Report)
+- `vite.config.ts` — Vite configuration (lovable-tagger removed)
+- `package.json` — scripts and dependencies
 
-## How can I deploy this project?
+## Scripts and filenames
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Exported scan filenames shown in the UI: `Netra-Light.ps1`, `Netra-Deep.ps1`.
+- When copying/downloading from the UI, those filenames will be used.
 
-## Can I connect a custom domain to my Lovable project?
+## License & responsibility
 
-Yes, you can!
+This repository contains scripts that are intended for authorized security assessment only. Use only on systems you own or are explicitly authorized to test.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

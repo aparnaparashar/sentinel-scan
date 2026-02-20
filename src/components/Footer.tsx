@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <Shield className="w-5 h-5 text-cyber-red" />
-            <span className="font-orbitron text-base font-bold">BAD<span className="text-cyber-red">COPS</span></span>
+            <span className="font-orbitron text-base font-bold">NET<span className="text-cyber-red">RA</span></span>
           </div>
           <p className="text-muted-foreground font-rajdhani text-sm leading-relaxed max-w-xs">
             Agent-less Windows vulnerability scanner built for real-world environments. SIH-grade security tooling.
@@ -32,13 +32,13 @@ export default function Footer() {
             <div className="flex items-start gap-2">
               <AlertTriangle className="w-4 h-4 text-threat-medium shrink-0 mt-0.5" />
               <p className="text-xs font-mono text-muted-foreground leading-relaxed">
-                BadCops is designed for <strong className="text-foreground">authorized security assessments only</strong>. 
+                Netra is designed for <strong className="text-foreground">authorized security assessments only</strong>. 
                 Scanning systems without explicit permission is illegal. Use responsibly.
               </p>
             </div>
           </div>
           <p className="text-xs font-mono text-muted-foreground mt-4 opacity-60">
-            © 2024 BadCops Project · Smart India Hackathon
+            © 2024 Netra Project · Smart India Hackathon
           </p>
         </div>
       </div>
