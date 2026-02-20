@@ -36,12 +36,12 @@ npm run preview
 
 ## Important files
 
-- `index.html` — HTML entry and metadata
-- `src/main.tsx` — React entry (project expects a `src` folder)
-- `src/pages/Index.tsx` — Home / hero page
-- `src/components/Navbar.tsx` — Navigation (Home, Architecture, Scan, Report)
-- `vite.config.ts` — Vite configuration (lovable-tagger removed)
-- `package.json` — scripts and dependencies
+- `index.html` - HTML entry and metadata
+- `src/main.tsx` - React entry (project expects a `src` folder)
+- `src/pages/Index.tsx` - Home / hero page
+- `src/components/Navbar.tsx` - Navigation (Home, Architecture, Scan, Report)
+- `vite.config.ts` - Vite configuration (lovable-tagger removed)
+- `package.json` - scripts and dependencies
 
 ## Scripts and filenames
 
